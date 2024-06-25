@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoveSense: A Multi-Modal Dataset for Combined Activities</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f0f0f5;
+            color: #333;
+        }
+        header, footer {
+            background-color: #34495e;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        h1 {
+            color: #ffffff;
+            text-align: center;
+        }
+        h2, h3 {
+            color: #2980b9;
+        }
+        p {
+            line-height: 1.6;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-size: 14px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #3498db;
+            color: #fff;
+        }
+        a {
+            color: #2980b9;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+        }
+        .acknowledgements, .legal, .contact {
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>MoveSense: A Multi-Modal Dataset for Combined Activities</h1>
+    </header>
+
+    <h2>About the Dataset</h2>
+    <p>MoveSense is a dataset designed for research in human activity recognition and gesture analysis using wearable technology. It captures a wide range of single-labeled activities performed concurrently in diverse real-world scenarios.</p>
+    <img src="dataset_images.png" alt="Illustration of activities collected. (a) Head gestures (facial and eye) IMU signatures are captured using an earable device, including specific eye movements and facial expressions. (b) Various scenarios where these activities were performed, such as driving, sitting as a passenger, running on a track, running on a treadmill, and running on a mountain hill.">
+
+    <h2>Project Structure</h2>
+    <pre>
+.
+├── LICENSE.txt
+├── code
+│   ├── Basic_info.ipynb
+│   ├── EARBUDS_Labels
+│   │   ├── Bad
+│   │   │   ├── P02-imu-right.csv
+│   │   │   ├── P03-imu-right.csv
+│   │   │   ├── P04-imu-right.csv
+│   │   │   ├── P12-imu-right.csv
+│   │   │   ├── P14-imu-right.csv
+│   │   │   ├── P15-imu-right.csv
+│   │   │   └── P16-imu-right.csv
+│   │   ├── Cleaned_by_model
+│   │   │   ├── P12-imu-right.csv
+│   │   │   └── P17-imu-right.csv
+│   │   ├── Good
+│   │   │   ├── P01-imu-right.csv
+│   │   │   ├── P05-imu-right.csv
+│   │   │   ├── P06-imu-right.csv
+│   │   │   ├── P07-imu-right.csv
+│   │   │   ├── P08-imu-right.csv
+│   │   │   ├── P09-imu-right.csv
+│   │   │   ├── P10-imu-right.csv
+│   │   │   ├── P11-imu-right.csv
+│   │   │   ├── P13-imu-right.csv
+│   │   │   └── P17-imu-right.csv
+│   │   ├── P01-imu-right.csv
+│   │   ├── P02-imu-right.csv
+│   │   ├── P03-imu-right.csv
+│   │   ├── P04-imu-right.csv
+│   │   ├── P05-imu-right.csv
+│   │   ├── P06-imu-right.csv
+│   │   ├── P07-imu-right.csv
+│   │   ├── P08-imu-right.csv
+│   │   ├── P09-imu-right.csv
+│   │   ├── P10-imu-right.csv
+│   │   ├── P11-imu-right.csv
+│   │   ├── P12-imu-right.csv
+│   │   ├── P13-imu-right.csv
+│   │   ├── P14-imu-right.csv
+│   │   ├── P15-imu-right.csv
+│   │   ├── P16-imu-right.csv
+│   │   └── P17-imu-right.csv
+│   ├── EE_Prep.ipynb
+│   ├── Preprocessing.ipynb
+│   ├── acc_112.ipynb
+│   ├── acc_59.ipynb
+│   ├── acc_gcc_118.ipynb
+│   ├── acc_gcc_224.ipynb
+│   ├── anomalies_labels.pdf
+│   ├── labelling.ipynb
+│   ├── refine_labels_acc_P01_P06.ipynb
+│   ├── refine_labels_ppg_P01_P06.ipynb
+│   ├── refined_labels
+│   │   ├── P01-imu-right.csv
+│   │   ├── P02-imu-right.csv
+│   │   ├── P03-imu-right.csv
+│   │   ├── P04-imu-right.csv
+│   │   ├── P05-imu-right.csv
+│   │   ├── P06-imu-right.csv
+│   │   ├── P07-imu-right.csv
+│   │   ├── P08-imu-right.csv
+│   │   ├── P09-imu-right.csv
+│   │   ├── P10-imu-right.csv
+│   │   ├── P11-imu-right.csv
+│   │   ├── P12-imu-right.csv
+│   │   ├── P13-imu-right.csv
+│   │   ├── P14-imu-right.csv
+│   │   ├── P15-imu-right.csv
+│   │   ├── P16-imu-right.csv
+│   │   └── P17-imu-right.csv
+│   ├── refining_labels.ipynb
+│   └── unrefined
+│       ├── P01
+│       │   ├── P01-imu-right.csv
+│       │   └── P01-ppg-right.csv
+│       └── P06
+│           ├── P06-imu-right.csv
+│           └── P06-ppg-right.csv
+├── data collection toolkit
+│   ├── AirPodsProMotion
+│   │   ├── Assets.xcassets
+│   │   │   ├── AccentColor.colorset
+│   │   │   │   └── Contents.json
+│   │   │   ├── AppIcon.appiconset
+│   │   │   │   └── Contents.json
+│   │   │   └── Contents.json
+│   │   ├── Base.lproj
+│   │   │   └── LaunchScreen.storyboard
+│   │   ├── ExportCSVViewController.swift
+│   │   ├── Info.plist
+│   │   ├── InformationViewController.swift
+│   │   ├── SK3DViewController.swift
+│   │   ├── Supporting Files
+│   │   │   ├── AlertViews.swift
+│   │   │   ├── AppDelegate.swift
+│   │   │   ├── CSVWriter.swift
+│   │   │   └── SceneDelegate.swift
+│   │   ├── TableViewController.swift
+│   │   └── TopViewController.swift
+│   ├── AirPodsProMotion.xcodeproj
+│   │   ├── project.pbxproj
+│   │   ├── project.xcworkspace
+│   │   │   ├── contents.xcworkspacedata
+│   │   │   ├── xcshareddata
+│   │   │   │   └── IDEWorkspaceChecks.plist
+│   │   │   └── xcuserdata
+│   │   │       └── garvitchugh.xcuserdatad
+│   │   │           └── UserInterfaceState.xcuserstate
+│   │   └── xcuserdata
+│   │       ├── garvitchugh.xcuserdatad
+│   │       │   └── xcschemes
+│   │       │       └── xcschememanagement.plist
+│   │       └── yoshio.xcuserdatad
+│   │           └── xcschemes
+│   │               └── xcschememanagement.plist
+│   ├── LICENSE
+│   ├── README.md
+│   ├── README_resources
+│   │   ├── export.gif
+│   │   ├── head.gif
+│   │   ├── info.gif
+│   │   ├── move.gif
+│   │   └── table.gif
+│   ├── dataset images.png
+│   ├── eyeapp.pdf
+│   └── eyeapp.png
+├── dataset images.pdf
+├── dataset_images.png
+├── index.html
+└── readme.md
+    </pre>
+
+    <h2>Dataset Documentation and Intended Uses</h2>
+    <p>The dataset can be used for developing robust recognition algorithms for healthcare, human-computer interaction, and other mobile applications.</p>
+
+    <h2>Access the Dataset</h2>
+    <p>You can access the dataset and its metadata using the following link:</p>
+    <ul>
+        <li><a href="https://github.com/chughgarvit/movesense/tree/main/code/EARBUDS_Labels/" target="_blank">Dataset and Benchmark</a></li>
+    </ul>
+
+    <h2>Code Usage</h2>
+    <h3>Notebook Files</h3>
+    <p>The code usage can be found in the following notebook files:</p>
+    <ul>
+        <li><a href="./code/acc_112.ipynb">./code/acc_112.ipynb</a></li>
+        <li><a href="./code/acc_gcc_118.ipynb">./code/acc_gcc_118.ipynb</a></li>
+        <li><a href="./code/acc_gcc_224.ipynb">./code/acc_gcc_224.ipynb</a></li>
+        <li><a href="./code/EE_Prep.ipynb">./code/EE_Prep.ipynb</a></li>
+    </ul>
+
+    <h3>Other Files</h3>
+    <p>The rest of the files are used for preprocessing and cleaning.</p>
+
+    <h2>Baseline Models and Results</h2>
+
+    <h3>Baseline Models</h3>
+    <p>We evaluated a range of model architectures to provide baseline performance on the MoveSense dataset. These models include:</p>
+    <ul>
+        <li>Long Short-Term Memory (LSTM) Networks</li>
+        <li>Support Vector Machine (SVM)</li>
+        <li>Decision Tree (DT)</li>
+        <li>Random Forest (RF)</li>
+        <li>Recurrent Neural Networks (RNN)</li>
+        <li>Gated Recurrent Unit (GRU)</li>
+        <li>Co-training Setup of SVM and DT (CL)</li>
+    </ul>
+
+    <h3>Evaluation Metrics</h3>
+    <p>The macro F1 score was used to evaluate classification performance due to the dataset's class imbalance. Mean Squared Error (MSE) was used to validate the prediction of IMU-based intensity detection with HRV from the smartwatch.</p>
+
+    <h3>Results</h3>
+    <p>Below is a table summarizing the performance of different models under various protocols and settings:</p>
+    <table>
+        <tr>
+            <th>Protocol</th>
+            <th>P1 (F1 Score)</th>
+            <th></th>
+            <th></th>
+            <th>P2 (F1 Score)</th>
+            <th></th>
+            <th></th>
+            <th>P3 (F1 Score)</th>
+            <th></th>
+            <th></th>
+            <th>MSE (%)</th>
+            <th></th>
+            <th></th>
+        </tr>
+        <tr>
+            <th>Setting</th>
+            <th>S1</th>
+            <th>S2</th>
+            <th>S3</th>
+            <th>S1</th>
+            <th>S2</th>
+            <th>S3</th>
+            <th>S1</th>
+            <th>S2</th>
+            <th>S3</th>
+            <th>R</th>
+            <th>T</th>
+            <th>TM</th>
+        </tr>
+        <tr>
+            <td>LSTM</td>
+            <td>0.93</td>
+            <td>0.91</td>
+            <td>0.85</td>
+            <td>0.82</td>
+            <td>0.86</td>
+            <td>0.88</td>
+            <td>0.79</td>
+            <td>0.76</td>
+            <td>0.65</td>
+            <td>1.60</td>
+            <td>1.77</td>
+            <td>1.58</td>
+        </tr>
+        <tr>
+            <td>SVM</td>
+            <td>0.91</td>
+            <td>0.87</td>
+            <td>0.90</td>
+            <td>0.93</td>
+            <td>0.89</td>
+            <td>0.90</td>
+            <td>0.81</td>
+            <td>0.71</td>
+            <td>0.73</td>
+            <td>1.67</td>
+            <td>2.14</td>
+            <td>1.89</td>
+        </tr>
+        <tr>
+            <td>DT</td>
+            <td>0.80</td>
+            <td>0.82</td>
+            <td>0.76</td>
+            <td>0.88</td>
+            <td>0.82</td>
+            <td>0.89</td>
+            <td>0.75</td>
+            <td>0.74</td>
+            <td>0.79</td>
+            <td>1.80</td>
+            <td>1.91</td>
+            <td>2.18</td>
+        </tr>
+        <tr>
+            <td>RF</td>
+            <td>0.91</td>
+            <td>0.88</td>
+            <td>0.87</td>
+            <td>0.78</td>
+            <td>0.74</td>
+            <td>0.76</td>
+            <td>0.86</td>
+            <td>0.82</td>
+            <td>0.83</td>
+            <td>0.89</td>
+            <td>1.16</td>
+            <td>1.12</td>
+        </tr>
+        <tr>
+            <td>RNN</td>
+            <td>0.79</td>
+            <td>0.74</td>
+            <td>0.72</td>
+            <td>0.81</td>
+            <td>0.79</td>
+            <td>0.77</td>
+            <td>0.84</td>
+            <td>0.81</td>
+            <td>0.82</td>
+            <td>1.14</td>
+            <td>1.51</td>
+            <td>1.34</td>
+        </tr>
+        <tr>
+            <td>GRU</td>
+            <td>0.85</td>
+            <td>0.81</td>
+            <td>0.84</td>
+            <td>0.88</td>
+            <td>0.83</td>
+            <td>0.79</td>
+            <td>0.71</td>
+            <td>0.74</td>
+            <td>0.70</td>
+            <td>1.63</td>
+            <td>1.81</td>
+            <td>1.76</td>
+        </tr>
+        <tr>
+            <td>CL (SVM+DT)</td>
+            <td>0.88</td>
+            <td>0.82</td>
+            <td>0.83</td>
+            <td>0.91</td>
+            <td>0.89</td>
+            <td>0.87</td>
+            <td>0.81</td>
+            <td>0.77</td>
+            <td>0.79</td>
+            <td>2.11</td>
+            <td>1.93</td>
+            <td>2.05</td>
+        </tr>
+    </table>
+
+    <p><strong>Note on the Results</strong></p>
+    <ul>
+        <li><strong>Protocol P1:</strong> Includes 11 facial expressions (eye gestures).</li>
+        <li><strong>Protocol P2:</strong> Involves 5 fixed environments (car, road, track, treadmill).</li>
+        <li><strong>Protocol P3:</strong> Includes all 16 activities.</li>
+        <li><strong>Setting S1:</strong> Random Split.</li>
+        <li><strong>Setting S2:</strong> Cross-Subject Split.</li>
+        <li><strong>Setting S3:</strong> Cross-Environment Split.</li>
+        <li><strong>MSE R:</strong> Running.</li>
+        <li><strong>MSE T:</strong> Treadmill.</li>
+        <li><strong>MSE TM:</strong> Track.</li>
+    </ul>
+
+    <div class="acknowledgements">
+        <h2>Acknowledgements</h2>
+        <p>We thank the participants for their contributions. This work is funded by the project "Detecting Behavioral Health Disorders of Older Adults using Self-supervised Learning and Causal Reasoning" (Ref. No. S/TIH-ISI/SCB/20220090), sponsored by TIH at ISI Kolkata under the TIH-NSF joint research program, in collaboration with IIT Jodhpur (India), IIT Kharagpur (India), and UMBC (USA).</p>
+    </div>
+
+    <div class="legal">
+        <h2>Legal</h2>
+        <p>MoveSense uses the Apache 2.0 license for code found on the associated GitHub repo and the Creative Commons Attribution 4.0 license. The <a href="https://github.com/chughgarvit/movesense/main/LICENSE" target="_blank">LICENSE file</a> for the repo can be found in the top-level directory.</p>
+    </div>
+
+    <div class="contact">
+        <h2>Contact</h2>
+        <p>For any questions or issues, please contact Garvit Chugh at <a href="mailto:chugh.2@iitj.ac.in">chugh.2@iitj.ac.in</a>.</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 MoveSense Dataset. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
