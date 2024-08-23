@@ -10,7 +10,7 @@ The dataset can be used for developing robust recognition algorithms for healthc
 
 ## Access the Dataset
 You can access the dataset and its metadata using the following links:
-- [Dataset and Benchmark](https://github.com/chughgarvit/movesense/tree/main/code/EARBUDS_Labels/)
+- [Dataset and Benchmark](https://github.com/chughgarvit/movesense/tree/main/code/imu/)
 
 # Code Usage
 
