@@ -1,0 +1,88 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "cr": "http://mlcommons.org/schema/"
+  },
+
+  "@type": "Dataset",
+  "conformsTo": "http://mlcommons.org/croissant/1.0",
+
+  "name": "MoveSense_MultiModal_CombinedActivities_Recognition_Dataset",
+
+  "description": "MoveSense annotates concurrent daily actions. It provides high frequency IMU time series of facial expressions and head gestures across varied scenarios, paired with heart rate variability signals. This enables study of coupled physical and physiological responses.",
+
+  "keywords": [
+    "IMU",
+    "wearable_sensors",
+    "human_activity_recognition",
+    "gesture_recognition",
+    "combined_activities",
+    "multimodal_time_series",
+    "heart_rate_variability",
+    "HRV"
+  ],
+
+  "version": "1.0",
+  "url": "https://huggingface.co/datasets/chughgarvit/movesense",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+
+  "citation": "@misc{movesense2024,title={MoveSense Dataset},author={Chugh, Garvit and others},year={2024},howpublished={\\url{https://huggingface.co/datasets/chughgarvit/movesense}}}",
+
+  "datePublished": "2024-05-16",
+
+  "creator": [
+    { "@type": "Person", "name": "Garvit Chugh" },
+    { "@type": "Person", "name": "Indrajeet Ghosh" },
+    { "@type": "Person", "name": "Abu Zaher Md Faridee" },
+    { "@type": "Person", "name": "Nirmalya Roy" },
+    { "@type": "Person", "name": "Sandip Chakraborty" },
+    { "@type": "Person", "name": "Suchetana Chakraborty" }
+  ],
+
+  "funding": "Project Detecting Behavioral Health Disorders of Older Adults using Self supervised Learning and Causal Reasoning (Ref. S/TIH-ISI/SCB/20220090).",
+
+  "isAccessibleForFree": true,
+  "spatialCoverage": "Asia_Pacific_and_North_America",
+  "temporalCoverage": "2023-2024",
+
+  "distribution": [
+    {
+      "@type": "FileSet",
+      "@id": "imu_csvs",
+      "name": "imu_csvs",
+      "contentUrl": "https://huggingface.co/datasets/chughgarvit/movesense/resolve/main/code%20with%20dataset/imu/",
+      "encodingFormat": "text/csv",
+      "cr:includes": "P*.csv"
+    }
+  ],
+
+  "recordSet": [
+    {
+      "@type": "cr:RecordSet",
+      "@id": "imu_records",
+      "name": "imu_records",
+      "key": { "@id": "imu_records/row_index" },
+
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "imu_records/row_index",
+          "description": "Row_index",
+          "dataType": "Number",
+          "source": {
+            "fileSet": { "@id": "imu_csvs" },
+            "extract": { "rowNumber": true }
+          }
+        },
+        { "@type": "cr:Field", "@id": "imu_records/ax",    "description": "Accelerometer_X_g", "dataType": "Number", "source": { "fileSet": { "@id": "imu_csvs" }, "extract": { "csvColumn": "AX" } } },
+        { "@type": "cr:Field", "@id": "imu_records/ay",    "description": "Accelerometer_Y_g", "dataType": "Number", "source": { "fileSet": { "@id": "imu_csvs" }, "extract": { "csvColumn": "Ay" } } },
+        { "@type": "cr:Field", "@id": "imu_records/az",    "description": "Accelerometer_Z_g", "dataType": "Number", "source": { "fileSet": { "@id": "imu_csvs" }, "extract": { "csvColumn": "Az" } } },
+        { "@type": "cr:Field", "@id": "imu_records/gx",    "description": "Gyroscope_X_dps",   "dataType": "Number", "source": { "fileSet": { "@id": "imu_csvs" }, "extract": { "csvColumn": "Gx" } } },
+        { "@type": "cr:Field", "@id": "imu_records/gy",    "description": "Gyroscope_Y_dps",   "dataType": "Number", "source": { "fileSet": { "@id": "imu_csvs" }, "extract": { "csvColumn": "Gy" } } },
+        { "@type": "cr:Field", "@id": "imu_records/gz",    "description": "Gyroscope_Z_dps",   "dataType": "Number", "source": { "fileSet": { "@id": "imu_csvs" }, "extract": { "csvColumn": "GZ" } } },
+        { "@type": "cr:Field", "@id": "imu_records/label", "description": "Activity_label",    "dataType": "Text",   "source": { "fileSet": { "@id": "imu_csvs" }, "extract": { "csvColumn": "label" } } }
+      ]
+    }
+  ]
+}
