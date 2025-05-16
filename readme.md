@@ -1,7 +1,7 @@
-# MoveSense: A Multi-Modal Dataset for Combined Activities
+# NeuroMotion: A Multi-Modal Dataset for Combined Activities
 
 ## About the Dataset
-MoveSense is a dataset designed for research in human activity recognition and gesture analysis using wearable technology. It captures a wide range of single-labeled activities performed concurrently in diverse real-world scenarios.
+NeuroMotion is a dataset designed for research in human activity recognition and gesture analysis using wearable technology. It captures a wide range of single-labeled activities performed concurrently in diverse real-world scenarios.
 
 ![Illustration of activities collected. (a) Head gestures (facial and eye) IMU signatures are captured using an earable device, including specific eye movements and facial expressions. (b) Various scenarios where these activities were performed, such as driving, sitting as a passenger, running on a track, running on a treadmill, and running on a mountain hill.](dataset_images.png)
 
@@ -10,7 +10,7 @@ The dataset can be used for developing robust recognition algorithms for healthc
 
 ## Access the Dataset
 You can access the dataset and its metadata using the following links:
-- [Dataset and Benchmark](https://github.com/chughgarvit/movesense/tree/main/code/imu/)
+- [Dataset and Benchmark](https://github.com/chughgarvit/NeuroMotion/tree/main/code/imu/)
 
 # Code Usage
 
@@ -33,7 +33,7 @@ The rest of the files are used for preprocessing and cleaning.
 ## Baseline Models and Results
 
 ### Baseline Models
-We evaluated a range of model architectures to provide baseline performance on the MoveSense dataset. These models include:
+We evaluated a range of model architectures to provide baseline performance on the NeuroMotion dataset. These models include:
 - **Long Short-Term Memory (LSTM) Networks**
 - **Support Vector Machine (SVM)**
 - **Decision Tree (DT)**
@@ -77,10 +77,10 @@ We thank the participants for their contributions. This work is funded by the pr
 
 ## Legal
 
-MoveSense uses the Apache 2.0 license for code found on the associated GitHub repo and the Creative Commons Attribution 4.0 license. The [LICENSE file](https://github.com/chughgarvit/movesense/main/LICENSE) for the repo can be found in the top-level directory.
+NeuroMotion uses the Apache 2.0 license for code found on the associated GitHub repo and the Creative Commons Attribution 4.0 license. The [LICENSE file](https://github.com/chughgarvit/NeuroMotion/main/LICENSE) for the repo can be found in the top-level directory.
 
 ## Contact
 
 For any questions or issues, please contact Garvit Chugh at [chugh.2@iitj.ac.in](mailto:chugh.2@iitj.ac.in).
 
-&copy; 2024 MoveSense Dataset. All rights reserved.
+&copy; 2024 NeuroMotion Dataset. All rights reserved.

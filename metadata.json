@@ -8,9 +8,9 @@
   "@type": "Dataset",
   "conformsTo": "http://mlcommons.org/croissant/1.0",
 
-  "name": "MoveSense_MultiModal_CombinedActivities_Recognition_Dataset",
+  "name": "NeuroMotion_MultiModal_CombinedActivities_Recognition_Dataset",
 
-  "description": "MoveSense annotates concurrent daily actions. It provides high frequency IMU time series of facial expressions and head gestures across varied scenarios, paired with heart rate variability signals. This enables study of coupled physical and physiological responses.",
+  "description": "NeuroMotion annotates concurrent daily actions. It provides high frequency IMU time series of facial expressions and head gestures across varied scenarios, paired with heart rate variability signals. This enables study of coupled physical and physiological responses.",
 
   "keywords": [
     "IMU",
@@ -24,10 +24,10 @@
   ],
 
   "version": "1.0",
-  "url": "https://huggingface.co/datasets/chughgarvit/movesense",
+  "url": "https://huggingface.co/datasets/chughgarvit/NeuroMotion",
   "license": "https://creativecommons.org/licenses/by/4.0/",
 
-  "citation": "@misc{movesense2024,title={MoveSense Dataset},author={Chugh, Garvit and others},year={2024},howpublished={\\url{https://huggingface.co/datasets/chughgarvit/movesense}}}",
+  "citation": "@misc{NeuroMotion2024,title={NeuroMotion Dataset},author={Chugh, Garvit and others},year={2024},howpublished={\\url{https://huggingface.co/datasets/chughgarvit/NeuroMotion}}}",
 
   "datePublished": "2024-05-16",
 
@@ -51,7 +51,7 @@
       "@type": "FileSet",
       "@id": "imu_csvs",
       "name": "imu_csvs",
-      "contentUrl": "https://huggingface.co/datasets/chughgarvit/movesense/resolve/main/code%20with%20dataset/imu/",
+      "contentUrl": "https://huggingface.co/datasets/chughgarvit/NeuroMotion/resolve/main/code%20with%20dataset/imu/",
       "encodingFormat": "text/csv",
       "cr:includes": "P*.csv"
     }
